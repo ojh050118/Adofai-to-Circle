@@ -1,0 +1,35 @@
+﻿namespace AdofaiToCircle
+{
+    public enum AdofaiEventType
+    {
+        MoveCamera,
+        CustomBackground,
+        SetFilter,
+        RecolorTrack,
+        ColorTrack,
+        PositionTrack,
+        MoveTrack,
+        Bloom,
+        SetSpeed,
+        Twirl,
+        ShakeScreen,
+        Flash,
+        SetHitsound,
+        AnimateTrack,
+        SetPlanetRotation,
+        RepeatEvents,
+        HallOfMirrors,
+        AddDecoration,
+        MoveDecorations,
+        Checkpoint,
+        SetConditionalEvents,
+        AddText,
+        ScreenScroll,
+        SetText,
+        ScreenTile,
+        EditorComment,
+        Bookmark,
+        PlaySound,
+        ChangeTrack
+    }
+}
