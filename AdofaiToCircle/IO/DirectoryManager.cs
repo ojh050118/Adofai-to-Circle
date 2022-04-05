@@ -1,4 +1,4 @@
-﻿namespace AdofaiToCircle
+﻿namespace AdofaiToCircle.IO
 {
     public class DirectoryManager
     {

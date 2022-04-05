@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle.Circle.Elements
 {
-    public enum SpeedType
+    public enum CircleSpeedType
     {
         Multiplier,
         Bpm

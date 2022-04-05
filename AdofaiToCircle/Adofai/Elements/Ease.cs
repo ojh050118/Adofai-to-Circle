@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle
 {
-    public enum AdofaiEase
+    public enum Ease
     {
         Unset,
         Linear,

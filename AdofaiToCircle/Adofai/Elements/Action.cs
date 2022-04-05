@@ -5,10 +5,10 @@ using JsonExtensions = Newtonsoft.Json.Linq.Extensions;
 
 namespace AdofaiToCircle.Adofai.Elements
 {
-    public class AdofaiAction
+    public class Action
     {
         public int Floor { get; set; }
-        public AdofaiEventType EventType { get; set; }
+        public EventType EventType { get; set; }
         public string TrackColor { get; set; }
         public string SecondaryTrackColor { get; set; }
         public TrackColorType TrackColorType { get; set; }
@@ -16,7 +16,7 @@ namespace AdofaiToCircle.Adofai.Elements
         public ColorPulseType TrackColorPulse { get; set; }
         public int TrackPulseLength { get; set; }
         public double TrackColorAnimDuration { get; set; }
-        public SpeedType? SpeedType { get; set; }
+        public CircleSpeedType? SpeedType { get; set; }
         public double BeatsPerMinute { get; set; }
         public double BPMMultiplier { get; set; }
         public int HitsoundVolume { get; set; }
@@ -28,7 +28,7 @@ namespace AdofaiToCircle.Adofai.Elements
         public int StartOpacity { get; set; }
         public int EndOpacity { get; set; }
         public int Zoom { get; set; }
-        public AdofaiEase Ease { get; set; }
+        public Ease Ease { get; set; }
         public DisplayMode BgDisplayMode { get; set; }
         public string ImageColor { get; set; }
         public int UnscaledSize { get; set; }
@@ -80,7 +80,7 @@ namespace AdofaiToCircle.Adofai.Elements
         public Toggle FadeOut { get; set; }
         public object Components { get; set; }
 
-        public AdofaiAction Clone() => (AdofaiAction)MemberwiseClone();
+        public Action Clone() => (Action)MemberwiseClone();
 
         public Vector2? GetScale()
         {

@@ -5,7 +5,7 @@ namespace AdofaiToCircle.Circle
     public class CircleFile
     {
         public float[] AngleData { get; set; }
-        public Settings Settings { get; set; }
-        public Actions[] Actions { get; set; }
+        public CircleSettings Settings { get; set; }
+        public CircleActions[] Actions { get; set; }
     }
 }

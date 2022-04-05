@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle.Circle.Elements
 {
-    public enum EventType
+    public enum CircleEventType
     {
         Twirl,
         SetSpeed,

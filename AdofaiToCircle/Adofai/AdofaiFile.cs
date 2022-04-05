@@ -1,12 +1,10 @@
-﻿using AdofaiToCircle.Adofai.Elements;
-
-namespace AdofaiToCircle.Adofai
+﻿namespace AdofaiToCircle.Adofai
 {
     public class AdofaiFile
     {
         public string PathData { get; set; }
         public float[] AngleData { get; set; }
-        public AdofaiSettings Settings { get; set; }
-        public AdofaiAction[] Actions { get; set; }
+        public Settings Settings { get; set; }
+        public Elements.Action[] Actions { get; set; }
     }
 }

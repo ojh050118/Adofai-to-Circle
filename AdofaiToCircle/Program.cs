@@ -3,6 +3,7 @@ using System.IO.Compression;
 using AdofaiToCircle.Adofai;
 using AdofaiToCircle.Circle;
 using AdofaiToCircle.Convert;
+using AdofaiToCircle.Convert.Circle;
 using AdofaiToCircle.Extensions;
 using AdofaiToCircle.IO;
 using Newtonsoft.Json;

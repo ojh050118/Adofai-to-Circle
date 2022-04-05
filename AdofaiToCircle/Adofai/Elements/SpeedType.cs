@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle
 {
-    public enum AdofaiSpeedType
+    public enum SpeedType
     {
         Bpm,
         Multiplier

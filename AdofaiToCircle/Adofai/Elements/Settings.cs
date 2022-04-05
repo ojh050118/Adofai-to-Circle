@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle
 {
-    public class AdofaiSettings
+    public class Settings
     {
         public int Version { get; set; } = 6;
         public string Artist { get; set; } = "Artist";

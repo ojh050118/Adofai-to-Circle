@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle.Circle.Elements
 {
-    public enum Easing
+    public enum CircleEasing
     {
         None,
         Out,

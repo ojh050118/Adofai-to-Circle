@@ -2,7 +2,7 @@
 
 namespace AdofaiToCircle.Circle.Elements
 {
-    public struct Settings
+    public struct CircleSettings
     {
         public string Artist;
         public string Song;
@@ -21,7 +21,7 @@ namespace AdofaiToCircle.Circle.Elements
         public int CountdownTicks;
         public string BgImage;
         public string BgVideo;
-        public Easing PlanetEasing;
+        public CircleEasing PlanetEasing;
         public Relativity RelativeTo;
         public float[] Position;
         public float Rotation;

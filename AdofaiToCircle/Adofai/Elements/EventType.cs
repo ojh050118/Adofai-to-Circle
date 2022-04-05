@@ -1,6 +1,6 @@
 ﻿namespace AdofaiToCircle
 {
-    public enum AdofaiEventType
+    public enum EventType
     {
         MoveCamera,
         CustomBackground,

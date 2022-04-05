@@ -2,15 +2,15 @@
 
 namespace AdofaiToCircle.Circle.Elements
 {
-    public struct Actions
+    public struct CircleActions
     {
         public int Floor;
-        public EventType? EventType;
-        public SpeedType? SpeedType;
+        public CircleEventType? EventType;
+        public CircleSpeedType? SpeedType;
         public float BeatsPerMinute;
         public float BpmMultiplier;
         public Relativity? RelativeTo;
-        public Easing Ease;
+        public CircleEasing Ease;
         public double Duration;
         public float? Rotation;
         public float AngleOffset;
