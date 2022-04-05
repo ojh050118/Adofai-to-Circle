@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "AdofaiToCircle (Debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "${workspaceRoot}/AdofaiToCircle/bin/Debug/net6.0/AdofaiToCircle.dll",
+            ],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "Build (Tests, Debug)",
+            "linux": {
+                "env": {
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/AdofaiToCircle/bin/Debug/net6.0:${env:LD_LIBRARY_PATH}"
+                }
+            },
+            "console": "internalConsole"
+        },
+        {
+            "name": "AdofaiToCircle (Release)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "${workspaceRoot}/AdofaiToCircle/bin/Release/net5.0/AdofaiToCircle.dll",
+            ],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": "Build (Tests, Release)",
+            "linux": {
+                "env": {
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/AdofaiToCircle/bin/Release/net6.0:${env:LD_LIBRARY_PATH}"
+                }
+            },
+            "console": "internalConsole"
+        }
+    ]
+}
