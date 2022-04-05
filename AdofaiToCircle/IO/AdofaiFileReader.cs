@@ -2,7 +2,7 @@
 using AdofaiToCircle.Adofai;
 using Newtonsoft.Json;
 
-namespace AdofaiToCircle
+namespace AdofaiToCircle.IO
 {
     public class AdofaiFileReader
     {

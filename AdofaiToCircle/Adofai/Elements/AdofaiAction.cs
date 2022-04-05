@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using AdofaiToCircle.Circle.Elements;
 using Newtonsoft.Json.Linq;
+using JsonExtensions = Newtonsoft.Json.Linq.Extensions;
 
 namespace AdofaiToCircle.Adofai.Elements
 {
@@ -40,7 +41,7 @@ namespace AdofaiToCircle.Adofai.Elements
         {
             if (Tile == null || !(Tile is JArray tile))
                 return Vector2.One;
-            float[] array = ((IEnumerable<JToken>)tile).Select(jt => Extensions.Value<float>(jt)).ToArray();
+            float[] array = ((IEnumerable<JToken>)tile).Select(jt => JsonExtensions.Value<float>(jt)).ToArray();
             return new Vector2(array[0], array[1]);
         }
         public string EventTag { get; set; }
@@ -87,13 +88,13 @@ namespace AdofaiToCircle.Adofai.Elements
                 return new Vector2?();
             if (!(Scale is JArray scale))
                 return new Vector2?(new Vector2(float.Parse(Scale.ToString())));
-            float[] array = ((IEnumerable<JToken>)scale).Select((jt => Extensions.Value<float>(jt))).ToArray();
+            float[] array = ((IEnumerable<JToken>)scale).Select((jt => JsonExtensions.Value<float>(jt))).ToArray();
             return new Vector2?(new Vector2(array[0], array[1]));
         }
 
         public float? GetRotationOffset() => RotationOffset == null ? new float?() : new float?(float.Parse(RotationOffset.ToString()));
 
-        public float[] GetPositionOffset() => PositionOffset == null ? null : ((IEnumerable<JToken>)(PositionOffset as JArray)).Select(jt => Extensions.Value<float>(jt)).ToArray();
+        public float[] GetPositionOffset() => PositionOffset == null ? null : ((IEnumerable<JToken>)(PositionOffset as JArray)).Select(jt => JsonExtensions.Value<float>(jt)).ToArray();
 
         public string[] Tags => string.IsNullOrEmpty(Tag) ? null : Tag.Split(" ");
 

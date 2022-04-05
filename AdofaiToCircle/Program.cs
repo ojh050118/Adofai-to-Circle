@@ -2,7 +2,9 @@
 using System.IO.Compression;
 using AdofaiToCircle.Adofai;
 using AdofaiToCircle.Circle;
-using AdofaiToCircle.IO.Convert;
+using AdofaiToCircle.Convert;
+using AdofaiToCircle.Extensions;
+using AdofaiToCircle.IO;
 using Newtonsoft.Json;
 
 namespace AdofaiToCircle
@@ -10,8 +12,6 @@ namespace AdofaiToCircle
     public class Program
     {
         public static string RunningDirectory => Directory.GetCurrentDirectory();
-
-        private static readonly char[] unused_char = { '\\', '/', ':', '*', '?', '\"', '<', '>', '|' };
 
         private const string import_folder = @"Import";
         private const string export_folder = @"Export";
@@ -55,7 +55,7 @@ namespace AdofaiToCircle
                     }
 
                     // OS에서 허용되는 파일문자로 대체합니다.
-                    var fileName = replaceSafeChar($"[{adofai.Settings?.Author}] {adofai.Settings?.Artist} - {adofai.Settings?.Song}.circle");
+                    var fileName = FileExtensions.ReplaceSafeChar($"[{adofai.Settings?.Author}] {adofai.Settings?.Artist} - {adofai.Settings?.Song}.circle");
 
                     // adofai 에서 우리가 원하는 형식으로 변환을 합니다.
                     var circle = converter.Convert(adofai);
@@ -74,9 +74,9 @@ namespace AdofaiToCircle
                     }
 
                     write($"Copying beatmap resources...");
-                    FileCopyHelper.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.BgImage), Path.Combine(beatmapDir.FullName, circle.Settings.BgImage));
-                    FileCopyHelper.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.SongFileName), Path.Combine(beatmapDir.FullName, circle.Settings.SongFileName));
-                    FileCopyHelper.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.BgVideo), Path.Combine(beatmapDir.FullName, circle.Settings.BgVideo));
+                    FileExtensions.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.BgImage), Path.Combine(beatmapDir.FullName, circle.Settings.BgImage));
+                    FileExtensions.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.SongFileName), Path.Combine(beatmapDir.FullName, circle.Settings.SongFileName));
+                    FileExtensions.TryCopy(Path.Combine(adofaiDir.FullName, circle.Settings.BgVideo), Path.Combine(beatmapDir.FullName, circle.Settings.BgVideo));
 
                     try
                     {
@@ -124,24 +124,6 @@ namespace AdofaiToCircle
                 Console.WriteLine("Error:".PadRight(8) + message);
                 Console.ResetColor();
             }
-        }
-
-        /// <summary>
-        /// OS에서 허용하지 않는 문자를 <paramref name="replaceTo"/>로 대체합니다.
-        /// </summary>
-        /// <param name="text">문자.</param>
-        /// <returns>대체된 문자.</returns>
-        private static string replaceSafeChar(string text, char replaceTo = '_')
-        {
-            string result = text;
-
-            foreach (var c in unused_char)
-            {
-                if (result.Contains(c))
-                    result = result.Replace(c, replaceTo);
-            }
-
-            return result;
         }
     }
 }

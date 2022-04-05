@@ -2,7 +2,7 @@
 using AdofaiToCircle.Circle;
 using AdofaiToCircle.Circle.Elements;
 
-namespace AdofaiToCircle.IO.Convert
+namespace AdofaiToCircle.Convert
 {
     public class CircleBeatmapConverter : BeatmapConverter<AdofaiFile, CircleFile>
     {

@@ -1,4 +1,4 @@
-﻿namespace AdofaiToCircle.IO.Convert
+﻿namespace AdofaiToCircle.Convert
 {
     public abstract class BeatmapConverter<TTarget, TResult>
         where TTarget : class
