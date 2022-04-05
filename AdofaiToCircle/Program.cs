@@ -25,6 +25,7 @@ namespace AdofaiToCircle
 
         private static readonly Stopwatch stopwatch = new Stopwatch();
 
+        // Todo: Import, Export폴더의 경로를 실행인수로 받기. (기본값: 프로그램이 실행되고있는 경로.)
         public static void Main()
         {
             // 파일 중복 오류를 막기 위해 폴더를 정리합니다.
@@ -33,6 +34,7 @@ namespace AdofaiToCircle
             Console.WriteLine($"Ready to convert {importDir.GetDirectories().Length} adofai levels!");
             Console.ReadLine();
 
+            // 소요시간을 측정을 시작합니다.
             stopwatch.Start();
 
             foreach (var adofaiDir in importDir.GetDirectories())
