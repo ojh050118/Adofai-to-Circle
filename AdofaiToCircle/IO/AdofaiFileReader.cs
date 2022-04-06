@@ -6,7 +6,7 @@ namespace AdofaiToCircle.IO
 {
     public class AdofaiFileReader
     {
-        public AdofaiFile AdofaiFile;
+        public AdofaiFile AdofaiFile { get; private set; }
 
         public AdofaiFile Get(string file)
         {
