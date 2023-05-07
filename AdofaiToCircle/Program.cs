@@ -20,10 +20,10 @@ namespace AdofaiToCircle
         private static DirectoryManager importDir = new DirectoryManager(Path.Combine(RunningDirectory, import_folder));
         private static DirectoryManager exportDir = new DirectoryManager(Path.Combine(RunningDirectory, export_folder));
 
-        private static AdofaiFileReader adofaiFileReader = new AdofaiFileReader();
+        private static AdofaiFileReader adofaiFileReader = new();
         private static BeatmapConverter<AdofaiFile, CircleFile> converter = new CircleBeatmapConverter();
 
-        private static readonly Stopwatch stopwatch = new Stopwatch();
+        private static readonly Stopwatch stopwatch = new();
 
         // Todo: Import, Export폴더의 경로를 실행인수로 받기. (기본값: 프로그램이 실행되고있는 경로.)
         public static void Main()
@@ -45,7 +45,7 @@ namespace AdofaiToCircle
                     if (adofaiFile.Name == "backup.adofai")
                         continue;
 
-                    AdofaiFile adofai = null;
+                    AdofaiFile adofai;
                     try
                     {
                         write($"Loading \"{adofaiFile.Directory?.Name}/{adofaiFile.Name}\"...");
@@ -57,8 +57,12 @@ namespace AdofaiToCircle
                         continue;
                     }
 
+                    var title = $"[{adofai.Settings?.Author}] {adofai.Settings?.Artist} - {adofai.Settings?.Song}";
+                    if (title.Length >= 100)
+                        title = title.Substring(0, 100);
+
                     // OS에서 허용되는 파일문자로 대체합니다.
-                    var fileName = FileExtensions.ReplaceSafeChar($"[{adofai.Settings?.Author}] {adofai.Settings?.Artist} - {adofai.Settings?.Song}.circle");
+                    var fileName = FileExtensions.ReplaceSafeChar($"{title}.circle");
 
                     // adofai 에서 우리가 원하는 형식으로 변환을 합니다.
                     var circle = converter.Convert(adofai);
