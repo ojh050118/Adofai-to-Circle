@@ -6,5 +6,6 @@
         public float[] AngleData { get; set; }
         public Settings Settings { get; set; }
         public Elements.Action[] Actions { get; set; }
+        public object[] Decorations { get; set; }
     }
 }
