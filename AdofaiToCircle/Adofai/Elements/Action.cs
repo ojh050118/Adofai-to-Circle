@@ -27,15 +27,15 @@ namespace AdofaiToCircle.Adofai.Elements
         public string EndColor { get; set; }
         public int StartOpacity { get; set; }
         public int EndOpacity { get; set; }
-        public int Zoom { get; set; }
+        public int? Zoom { get; set; }
         public Ease Ease { get; set; }
         public DisplayMode BgDisplayMode { get; set; }
         public string ImageColor { get; set; }
         public int UnscaledSize { get; set; }
-        public float Rotation { get; set; }
+        public float? Rotation { get; set; }
         public float AngleOffset { get; set; }
-        public Relativity RelativeTo { get; set; }
-        public float[] Position { get; set; }
+        public Relativity? RelativeTo { get; set; }
+        public float?[] Position { get; set; }
         public object Tile { get; set; }
         public Vector2 GetDecorationTiling()
         {
