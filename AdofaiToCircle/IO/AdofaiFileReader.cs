@@ -14,6 +14,7 @@ namespace AdofaiToCircle.IO
             {
                 var text = sr.ReadToEnd();
                 filterTrailingComma(ref text);
+                addComma(ref text);
 
                 AdofaiFile = JsonConvert.DeserializeObject<AdofaiFile>(text);
             }
@@ -24,6 +25,13 @@ namespace AdofaiToCircle.IO
         private string filterTrailingComma(ref string result)
         {
             return result = result.Replace(",,", ",");
+        }
+
+        private string addComma(ref string result)
+        {
+            return result = result.Replace("}\n", "},\n")
+                                  .Replace("]\n", "],\n")
+                                  .TrimEnd('\n').TrimEnd(',');
         }
     }
 }
