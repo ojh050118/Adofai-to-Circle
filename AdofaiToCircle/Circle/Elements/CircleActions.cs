@@ -14,7 +14,7 @@ namespace AdofaiToCircle.Circle.Elements
         public double Duration;
         public float? Rotation;
         public float AngleOffset;
-        public float[] Position;
+        public float?[] Position;
         public int? Zoom;
         public int Repetitions;
         public double Interval;
